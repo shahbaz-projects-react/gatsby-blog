@@ -2,6 +2,7 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import styled from "styled-components"
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 
 const Title = styled.h1`
   display: inline-block;
@@ -27,8 +28,14 @@ const BlogBody = styled.div`
 export default ({ data }) => {
   return (
     <Layout>
+      <SEO
+        title="Home"
+        description="Check out mind blowing thoughts..."
+        lang="en"
+        keys="Shahbaz Gul Khan,gatsby,blog,blog app"
+      />
       <div>
-        <Title>Thoughts by Yihua</Title>
+        <Title>Thoughts by Shahbaz</Title>
         <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <BlogBody key={node.id}>
